@@ -20,13 +20,14 @@ signed main()
 		auto start = chrono::high_resolution_clock::now();//chrono=나노초 단위의 시간 계산
 		int i;
 		int isp = 1;
-		for (i = 2; i < (1LL << p) - 1; i++)
+		for (i = 2; i <= sqrt((1LL << p) - 1); i++)
 		{
 			mod = i;//현재 i를 체크하도록 설정
 			if (mul2(p) == 0)
 			{
+				if(isp)
+					cout << i << "로 나누어떨어짐\n";
 				isp = 0;
-				cout << i << "로 나누어떨어짐\n";
 			}
 		}
 		if (isp)
